@@ -1,27 +1,27 @@
 class Population {
     constructor(name) {
-        this.name = name;
+        this._name = name;
     }
     
     set name(newName) {
-        this.name = newName;
+        this._name = newName;
     }
 
     get name() {
-        return this.name;
+        return this._name;
     }
 }
 
 class Citizen extends Population {
-    constructor(age = 21, stateOfOrigin = Imo, status = single) {
+    constructor(age = 21, stateOfOrigin = Imo, maritalStatus = single) {
         super(this.name);
-        this.age = age;
-        this.stateOfOrigin = stateOfOrigin;
-        this.status = status;
+        this._age = age;
+        this._stateOfOrigin = stateOfOrigin;
+        this._maritalStatus = maritalStatus;
     }
 
     getBio() {
-        console.log(`${this.name} is ${this.age} from ${this.stateOfOrigin} and is ${this.status}. ${regVoter}`)
+        console.log(`${this._name} is ${this._age} from ${this._stateOfOrigin} and is ${this._mritalStatus}. ${this.regVoter()}`)
     }
 
     regVoter() {
