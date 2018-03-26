@@ -1,4 +1,4 @@
-export class Population {
+class Population {
     constructor(name) {
         this.name = name;
     }
@@ -12,7 +12,7 @@ export class Population {
     }
 }
 
-export class Citizen extends Population {
+class Citizen extends Population {
     constructor(age = 21, stateOfOrigin = Imo, status = single) {
         super(this.name);
         this.age = age;
