@@ -1,8 +1,8 @@
 class People {
-    constructor(name, age, stateOfOrigin, maritalStatus) {
+    constructor(name, age, nationality, maritalStatus) {
         this._name = name;
         this._age = age;
-        this._stateOfOrigin = stateOfOrigin;
+        this._nationality = nationality;
         this._maritalStatus = maritalStatus;
     }
     
@@ -13,18 +13,19 @@ class People {
     get name() {
         return this._name;
     }
+
+    getBio() {
+        return `${this._name} is ${this._age} from ${this._nationality} and is ${this._mritalStatus}. ${this.regVoter()}`;
+    }
 }
 
 class Citizen extends People {
-    constructor() {
+    constructor(name, age, nationality) {
         super(this.name);
         
         
     }
 
-    getBio() {
-        console.log(`${this._name} is ${this._age} from ${this._stateOfOrigin} and is ${this._mritalStatus}. ${this.regVoter()}`)
-    }
 
     regVoter() {
         if (this.age >= 18) {
