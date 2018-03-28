@@ -1,6 +1,9 @@
-class Population {
-    constructor(name) {
+class People {
+    constructor(name, age, stateOfOrigin, maritalStatus) {
         this._name = name;
+        this._age = age;
+        this._stateOfOrigin = stateOfOrigin;
+        this._maritalStatus = maritalStatus;
     }
     
     set name(newName) {
@@ -12,12 +15,11 @@ class Population {
     }
 }
 
-class Citizen extends Population {
-    constructor(age = 21, stateOfOrigin = Imo, maritalStatus = single) {
+class Citizen extends People {
+    constructor() {
         super(this.name);
-        this._age = age;
-        this._stateOfOrigin = stateOfOrigin;
-        this._maritalStatus = maritalStatus;
+        
+        
     }
 
     getBio() {
