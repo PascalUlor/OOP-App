@@ -17,7 +17,7 @@ class People {
 
 class Citizen extends People {
     constructor(name, age, nationality) {
-      super(name, age, nationality);
+      super(name, age, nationality, 0);
         
         }
 
