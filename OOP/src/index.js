@@ -1,33 +1,34 @@
 class People {
     constructor(name, age, nationality, maritalStatus) {
-        this._name = name;
-        this._age = age;
-        this._nationality = nationality;
-        this._maritalStatus = maritalStatus;
+        this.name = name;
+        this.age = age;
+        this.nationality = nationality;
+        this.maritalStatus = maritalStatus;
     }
     
-    set name(newName) {
-        this._name = newName;
-    }
-
-    get name() {
-        return this._name;
-    }
 
     getBio() {
-        return `${this._name} is ${this._age} from ${this._nationality} and is ${this._mritalStatus}. ${this.regVoter()}`;
+        return `${this.name} is ${this.age} from ${this.nationality} and is ${this.maritalStatus}.`;
+    }
+    outPut() {
+      console.log(`${this.name} is ${this.age} from ${this.nationality} and is ${this.maritalStatus}.`);
     }
 }
 
 class Citizen extends People {
     constructor(name, age, nationality) {
-        super(this.name);
+      super(name, age, nationality);
         
-        
-    }
+        }
 
+  getVoter() {
+      return `${this.name} is ${this.age} from ${this.nationality}. ${this.regVoter()}`;
+            }
+  outPut() {
+      console.log(`${this.name} is ${this.age} from ${this.nationality}. ${this.regVoter()}`);
+        }
 
-    regVoter() {
+  regVoter() {
         if (this.age >= 18) {
             return "You are old enough to vote";
         } else {
@@ -35,3 +36,10 @@ class Citizen extends People {
         }
     }
 }
+
+let victor = new Citizen('Victor', 21, 'Jamaica');
+let Nigerian = new People('Dan', 18, 'Nigeria', 'single');
+Nigerian.getBio();
+victor.getVoter();
+Nigerian.outPut();
+victor.outPut();
